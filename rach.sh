@@ -6,7 +6,7 @@
 set -e
 
 PKG_KERNEL="linux-zen linux-firmware amd-ucode intel-ucode"
-PKG_SYSTEM="base dbus-broker flatpak networkmanager ufw flatpak libvirt"
+PKG_SYSTEM="base dbus-broker networkmanager ufw flatpak libvirt zram-generator"
 PKG_PROGRAMS="opendoas wget curl git nano rsync"
 PKG_DEVEL="linux-zen-headers base-devel go"
 
@@ -25,8 +25,11 @@ if [ $1 = "chrooted" ]; then
 	systemctl enable dbus-broker $ENABLE
 
 	ln -sf /usr/bin/doas /usr/bin/sudo
-	cat $RACH/doas.conf > /etc/doas.conf
+	cp $RACH/doas.conf /etc/doas.conf
 	chmod 0400 /etc/doas.conf
+
+	# zram-generator enables itself
+	cp $RACH/zram-generator.conf /etc/systemd/zram-generator.conf
 
 	cat $RACH/pacman.conf.append >> /etc/pacman.conf
 	pacman -Sy
