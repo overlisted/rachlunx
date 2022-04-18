@@ -1,8 +1,7 @@
 source .base_gnome.sh
 source .base_amdgpu.sh
 source .base_codecs.sh
-
-export CUSTOM_SHELL=/bin/zsh
+source .base_zsh.sh
 
 export CUSTOM_YAY="$CUSTOM_YAY
 	aur/vscodium-bin aur/bottles aur/ttf-twemoji
@@ -10,7 +9,7 @@ export CUSTOM_YAY="$CUSTOM_YAY
 	community/ttf-nerd-fonts-symbols community/inter-font community/glfw-wayland
 	commuitty/rustup
 	core/man-pages
-	extra/zsh extra/noto-fonts extra/qemu extra/noto-fonts-cjk
+	extra/noto-fonts extra/qemu extra/noto-fonts-cjk
 	multilib/steam"
 
 export CUSTOM_FLATPAK="$CUSTOM_FLATPAK
