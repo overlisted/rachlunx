@@ -25,10 +25,10 @@ if [ $1 = "chrooted" ]; then
 	systemctl enable dbus-broker $ENABLE
 
 	ln -sf /usr/bin/doas /usr/bin/sudo
-	echo -e "permit persist setenv { XAUTHORITY LANG LC_ALL } :wheel\n" > /etc/doas.conf
+	cat $RACH/doas.conf > /etc/doas.conf
 	chmod 0400 /etc/doas.conf
 
-	echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+	cat $RACH/pacman.conf.append >> /etc/pacman.conf
 	pacman -Sy
 
 	timedatectl set-ntp true
