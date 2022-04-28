@@ -18,3 +18,6 @@ please don't be mad at me if this script deletes something important
 
 ## Why
 h
+
+## Custom
+Feel free to send me pull requests with your own `custom/` scripts
