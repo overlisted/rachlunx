@@ -11,9 +11,12 @@ RACH=/usr/share/rach
 passwd -d root
 mv /home/$1 /home/$1.old && echo "Moved old home"
 
+groupadd docker && echo "Created group docker"
+
 homectl create \
 	--storage=directory \
 	--member-of=libvirt \
+	--member-of=docker \
 	--member-of=wheel \
 	$1
 

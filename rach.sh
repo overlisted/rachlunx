@@ -7,12 +7,12 @@ set -e
 
 PKG_KERNEL="linux-zen linux-firmware amd-ucode intel-ucode"
 PKG_SYSTEM="base dbus-broker networkmanager ufw flatpak libvirt zram-generator"
-PKG_PROGRAMS="opendoas wget curl git nano rsync"
+PKG_PROGRAMS="opendoas wget curl git nano rsync docker"
 PKG_DEVEL="linux-zen-headers base-devel go"
 
 PACKAGES="$PKG_KERNEL $PKG_SYSTEM $PKG_DEVEL $PKG_PROGRAMS"
-ENABLE="systemd-resolved systemd-homed \
-	NetworkManager avahi-daemon libvirtd ufw"
+ENABLE="systemd-resolved systemd-homed NetworkManager avahi-daemon libvirtd ufw
+	docker"
 
 RACH=/usr/share/rach
 
