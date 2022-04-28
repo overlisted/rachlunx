@@ -4,10 +4,9 @@ source .base_codecs.sh
 source .base_zsh.sh
 
 export CUSTOM_YAY="$CUSTOM_YAY
-	aur/vscodium-bin aur/bottles aur/ttf-twemoji
-	community/neovim community/virt-manager community/ttf-dejavu
-	community/ttf-nerd-fonts-symbols community/inter-font community/glfw-wayland
-	community/rustup
+	aur/vscodium-bin aur/bottles aur/ttf-twemoji aur/nerd-fonts-jetbrains-mono
+	community/neovim community/virt-manager community/ttf-dejavu community/rustup
+	community/inter-font community/glfw-wayland
 	core/man-pages
 	extra/noto-fonts extra/qemu extra/noto-fonts-cjk
 	multilib/steam"
