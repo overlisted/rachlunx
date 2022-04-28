@@ -7,6 +7,7 @@ export CUSTOM_YAY="$CUSTOM_YAY
 	aur/vscodium-bin aur/bottles aur/ttf-twemoji aur/nerd-fonts-jetbrains-mono
 	community/neovim community/virt-manager community/ttf-dejavu community/rustup
 	community/inter-font community/glfw-wayland
+	community/firefox-developer-edition
 	core/man-pages
 	extra/noto-fonts extra/qemu extra/noto-fonts-cjk
 	multilib/steam"
