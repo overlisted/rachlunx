@@ -23,7 +23,7 @@ function custom_post() {
 	cd /tmp
 	git clone --recurse-submodules https://github.com/overlisted/dotfiles
 	rsync -a dotfiles/files/.* $HOME
-	dconf load /. < settings.dconf
+	dconf load / < dotfiles/settings.dconf
 
 	rustup default nightly
 	rustup component add rustfmt

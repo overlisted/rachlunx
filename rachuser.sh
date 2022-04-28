@@ -20,5 +20,5 @@ homectl create \
 ufw enable
 
 # i hate this
-echo "Please run su $1 and $RACH/rachlogin.sh (optionally with the name of the custom config)"
+echo "Please run machinectl shell --uid ${id -u $1} and $RACH/rachlogin.sh (optionally with the name of the custom config)"
 homectl with $1 sh

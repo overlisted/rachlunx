@@ -29,7 +29,7 @@ yay --noconfirm -R sudo || sudo rm /usr/bin/sudo
 yay --noconfirm --sudo doas -S aur/yay aur/opendoas-sudo $CUSTOM_YAY
 
 for ((i = 0; i < ${#FLATPAK_REPOS[@]}; i++)); do
-	flatpak remote-add --user --if-not-exists $FLATPAK_REPOS[$i]
+	flatpak remote-add --user --if-not-exists ${FLATPAK_REPOS[$i]}
 done
 
 # i don't want any apps accidentally getting installed under root
