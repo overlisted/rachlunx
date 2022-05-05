@@ -4,7 +4,7 @@ source .base_codecs.sh
 source .base_zsh.sh
 
 export CUSTOM_YAY="$CUSTOM_YAY
-	aur/vscodium-bin aur/bottles aur/ttf-twemoji aur/nerd-fonts-jetbrains-mono
+	aur/vscodium-bin aur/ttf-twemoji aur/nerd-fonts-jetbrains-mono
 	community/neovim community/virt-manager community/ttf-dejavu community/rustup
 	community/inter-font community/glfw-wayland
 	community/firefox-developer-edition
@@ -17,7 +17,8 @@ export CUSTOM_FLATPAK="$CUSTOM_FLATPAK
 	org.gnome.Epiphany.Devel//
 	org.telegram.desktop//beta
 	com.mattjakeman.ExtensionManager//beta
-	de.haeckerfelix.Fragments//stable"
+	de.haeckerfelix.Fragments//stable
+	com.usebottles.bottles//stable"
 
 function custom_post() {
 	cd /tmp
