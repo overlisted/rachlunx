@@ -7,5 +7,5 @@ export CUSTOM_FLATPAK="$CUSTOM_FLATPAK
 	"
 
 function custom_post() {
-
+	:
 }

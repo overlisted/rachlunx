@@ -21,10 +21,9 @@ export CUSTOM_FLATPAK="$CUSTOM_FLATPAK
 	com.usebottles.bottles//stable"
 
 function custom_post() {
-	cd /tmp
-	git clone --recurse-submodules https://github.com/overlisted/dotfiles
-	rsync -a dotfiles/files/.* $HOME
-	dconf load / < dotfiles/settings.dconf
+	git clone --recurse-submodules https://github.com/overlisted/dotfiles /tmp/dotfiles
+	rsync -a /tmp/dotfiles/files/.* $HOME
+	dconf load / < /tmp/dotfiles/settings.dconf
 
 	rustup default nightly
 	rustup component add rustfmt
