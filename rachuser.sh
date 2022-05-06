@@ -21,6 +21,7 @@ homectl create \
 	$1
 
 ufw enable
+timedatectl set-ntp true
 
 homectl activate $1
 # i hate this

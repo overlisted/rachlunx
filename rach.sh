@@ -34,8 +34,6 @@ if [ $1 = "chrooted" ]; then
 	cat $RACH/pacman.conf.append >> /etc/pacman.conf
 	pacman -Sy
 
-	timedatectl set-ntp true
-
 	usermod --password $(echo 1 | openssl passwd -1 -stdin) root
 else
 	export EFI_PART=1
