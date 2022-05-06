@@ -1,4 +1,4 @@
-export CUSTOM_SHELL=/bin/zsh
+custom_shell=/bin/zsh
 
-export CUSTOM_YAY="$CUSTOM_YAY
+custom_yay="$custom_yay
 	extra/zsh"

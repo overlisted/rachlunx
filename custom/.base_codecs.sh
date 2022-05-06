@@ -1,2 +1,2 @@
-export CUSTOM_YAY="$CUSTOM_YAY
+custom_yay="$custom_yay
 	extra/gst-libav extra/ffmpeg"

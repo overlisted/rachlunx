@@ -1,4 +1,4 @@
-export CUSTOM_YAY="$CUSTOM_YAY
+custom_yay="$custom_yay
 	aur/adwaita-qt
 	extra/gnome-session extra/gdm extra/gnome-control-center
 	extra/xdg-user-dirs-gtk extra/gnome-terminal extra/gnome-software
@@ -9,4 +9,4 @@ export CUSTOM_YAY="$CUSTOM_YAY
 	extra/pipewire-pulse extra/pipewire-jack extra/wireplumber extra/dconf-editor
 	extra/nautilus"
 
-export CUSTOM_ENABLE=gdm
+custom_enable=gdm

@@ -1,9 +1,12 @@
-export CUSTOM_SHELL=/bin/sh
+custom_shell=/bin/sh
 
-export CUSTOM_YAY="$CUSTOM_YAY
+custom_yay="$custom_yay
 	"
 
-export CUSTOM_FLATPAK="$CUSTOM_FLATPAK
+custom_flatpak="$custom_flatpak
+	"
+
+custom_enable="$custom_enable
 	"
 
 function custom_post() {

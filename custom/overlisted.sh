@@ -3,7 +3,7 @@ source .base_amdgpu.sh
 source .base_codecs.sh
 source .base_zsh.sh
 
-export CUSTOM_YAY="$CUSTOM_YAY
+custom_yay="$custom_yay
 	aur/vscodium-bin aur/ttf-twemoji aur/nerd-fonts-jetbrains-mono
 	community/neovim community/virt-manager community/ttf-dejavu community/rustup
 	community/inter-font community/glfw-wayland
@@ -12,7 +12,7 @@ export CUSTOM_YAY="$CUSTOM_YAY
 	extra/noto-fonts extra/qemu extra/noto-fonts-cjk
 	multilib/steam"
 
-export CUSTOM_FLATPAK="$CUSTOM_FLATPAK
+custom_flatpak="$custom_flatpak
 	org.gnome.Weather//stable
 	org.gnome.Epiphany.Devel//
 	org.telegram.desktop//beta
