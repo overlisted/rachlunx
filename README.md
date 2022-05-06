@@ -10,7 +10,7 @@ please don't be mad at me if this script deletes something important
 1. Boot into the Arch installer image
 2. `mkcd /tmp/rach`
 3. `curl overli.st/rach | tar -xz && ./rach.sh <disk>`
-4. Install your microcode and configure the timezone, locales and the hostname
+4. Install your microcode and [configure the timezone, locales and the hostname](https://wiki.archlinux.org/title/Installation_guide#Time_zone)
 5. Ctrl + D
 6. `reboot`
 7. Log in as root with the password `1`
