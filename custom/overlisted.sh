@@ -18,7 +18,8 @@ export CUSTOM_FLATPAK="$CUSTOM_FLATPAK
 	org.telegram.desktop//beta
 	com.mattjakeman.ExtensionManager//beta
 	de.haeckerfelix.Fragments//stable
-	com.usebottles.bottles//stable"
+	com.usebottles.bottles//stable
+	com.github.tchx84.Flatseal//stable"
 
 function custom_post() {
 	git clone --recurse-submodules https://github.com/overlisted/dotfiles /tmp/dotfiles
