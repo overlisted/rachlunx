@@ -25,6 +25,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
 
+yay --noconfirm --sudo doas -S archlinux-keyring
 yay --noconfirm -R sudo || sudo rm /usr/bin/sudo
 yay --noconfirm --sudo doas -S aur/yay aur/opendoas-sudo $CUSTOM_YAY
 
@@ -33,7 +34,7 @@ for ((i = 0; i < ${#FLATPAK_REPOS[@]}; i++)); do
 done
 
 # i don't want any apps accidentally getting installed under root
-sudo flatpak remote-delete flathub
+sudo flatpak remote-delete flathub && echo "Removed root flathub"
 
 for app in $CUSTOM_FLATPAK; do
 	flatpak install --noninteractive --user $app
