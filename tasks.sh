@@ -43,7 +43,7 @@ function iso_packages() {
 	packages=(
 		linux-zen linux-firmware amd-ucode intel-ucode
 		base dbus-broker networkmanager ufw flatpak libvirt zram-generator
-		opendoas wget curl git nano rsync docker
+		opendoas wget curl git nano rsync docker podman
 		linux-zen-headers base-devel go
 	)
 
@@ -116,18 +116,26 @@ function root_home_save() {
 	mv /home/$1 /home/$1.old || :
 }
 
-# $1 - username
-function root_user() {
+function root_groups() {
 	groupadd libvirt || :
 	groupadd docker || :
 	groupadd wheel || :
+}
 
+# $1 - username
+function root_user() {
 	homectl create \
 		--storage=directory \
 		--member-of=libvirt \
 		--member-of=docker \
 		--member-of=wheel \
 		$1
+}
+
+# $1 - username
+function root_podman() {
+	touch /etc/subuid /etc/subgid
+	usermod --add-subuids 100000-165535 --add-subgids 100000-165535 $1
 }
 
 function root_ufw() {

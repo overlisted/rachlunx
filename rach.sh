@@ -31,7 +31,9 @@ if [ $1 = "base" ]; then
 elif [ $1 = "userspace" ]; then
 	task root root_pass
 	task root home_save $2
+	task root groups
 	task root user $2
+	task root podman $2
 	task root ufw
 	task root ntp
 	task root flatpak
