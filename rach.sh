@@ -42,8 +42,9 @@ elif [ $1 = "_chrooted" ]; then
 	task chroot root_pass
 elif [ $1 = "_logged_in" ]; then
 	task user load_custom $2
-	task user yay $custom_yay
-	task user flatpak $custom_flatpak
-	task user enable $custom_enable
-	task user shell $custom_shell
+	task user yay
+	task user yay_pkgs "$custom_yay"
+	task user flatpak "$custom_flatpak"
+	task user enable "$custom_enable"
+	task user shell "$custom_shell"
 fi

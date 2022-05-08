@@ -155,25 +155,35 @@ function root_login() {
 
 # $1 - script name
 function user_load_custom() {
+	local oldpwd=$(pwd)
+
 	cd $rach/custom
 
-	if [ -z $1 ]; then
-		source noop.sh
-	else
+	if [ -n $1 ]; then
 		source $1.sh
+	else
+		source noop.sh
 	fi
+
+	cd $oldpwd
 }
 
-# $1 - packages
 function user_yay() {
+	local oldpwd=$(pwd)
+
 	cd /tmp
 	git clone https://aur.archlinux.org/yay.git || :
 	cd yay
 	makepkg -si --noconfirm
 
+	cd $oldpwd
+}
+
+# $1 - packages
+function user_yay_pkgs() {
 	yay --noconfirm --sudo doas -S archlinux-keyring
 	yay --noconfirm --sudo doas -R sudo || sudo rm /usr/bin/sudo
-	yay --noconfirm --sudo doas -S aur/yay aur/opendoas-sudo $1
+	yay --sudo doas -S aur/yay aur/opendoas-sudo $1
 }
 
 # $1 - flatpak refs
@@ -189,8 +199,6 @@ function user_flatpak() {
 		flatpak remote-add --user --if-not-exists ${repos[$i]}
 	done
 
-	sudo flatpak remote-delete flathub || :
-
 	for app in $1; do
 		flatpak install --noninteractive --user $app
 	done
@@ -198,10 +206,10 @@ function user_flatpak() {
 
 # $1 - service names
 function user_enable() {
-	[ -z "$1" ] sudo systemctl enable $1
+	[ -n "$1" ] && sudo systemctl enable $1
 }
 
 # $1 - shell program
 function user_shell() {
-	[ -z "$1" ] homectl update $(whoami) --shell=$custom_shell
+	[ -n "$1" ] && homectl update $(whoami) --shell=$custom_shell
 }
