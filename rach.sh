@@ -43,8 +43,8 @@ elif [ $1 = "_chrooted" ]; then
 elif [ $1 = "_logged_in" ]; then
 	task user load_custom $2
 	task user yay
-	task user yay_pkgs "$custom_yay"
-	task user flatpak "$custom_flatpak"
-	task user enable "$custom_enable"
-	task user shell "$custom_shell"
+	task user yay_pkgs
+	task user flatpak
+	task user enable
+	task user shell
 fi
