@@ -32,7 +32,7 @@ elif [ $1 = "userspace" ]; then
 	task root ntp
 	task root flatpak
 	task root login $2 $rach/rach.sh _logged_in
-	echo "\n\n\nReboot whenever you're ready."
+	echo -e "\n\n\nReboot whenever you're ready."
 elif [ $1 = "_chrooted" ]; then
 	task chroot systemd_boot
 	task chroot services
