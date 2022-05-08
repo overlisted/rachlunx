@@ -1,4 +1,6 @@
-![Logo](./logo.png)
+<div style="text-align: center;">
+  <img src="./logo.png" width="200" alt="Logo" />
+</div>
 
 # rach lunx
 
