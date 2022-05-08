@@ -71,8 +71,8 @@ function iso_reboot() {
 
 function chroot_systemd_boot() {
 	bootctl install
-	cp $rach/systemd-boot/loader.conf /boot/loader
-	cp $rach/systemd-boot/arch.conf /boot/loader/entries
+	cp $rach/data/systemd-boot/loader.conf /boot/loader
+	cp $rach/data/systemd-boot/arch.conf /boot/loader/entries
 }
 
 function chroot_services() {
@@ -87,17 +87,17 @@ function chroot_services() {
 
 function chroot_doas() {
 	ln -sf /usr/bin/doas /usr/bin/sudo
-	cp $rach/doas.conf /etc/doas.conf
+	cp $rach/data/doas.conf /etc/doas.conf
 	chmod 0400 /etc/doas.conf
 }
 
 function chroot_zram() {
 	# zram-generator enables itself
-	cp $rach/zram-generator.conf /etc/systemd/zram-generator.conf
+	cp $rach/data/zram-generator.conf /etc/systemd/zram-generator.conf
 }
 
 function chroot_pacman() {
-	cat $rach/pacman.conf.append >> /etc/pacman.conf
+	cat $rach/data/pacman.conf.append >> /etc/pacman.conf
 	pacman -Sy
 }
 
