@@ -23,7 +23,7 @@ custom_flatpak="$custom_flatpak
 
 function custom_post() {
 	git clone --recurse-submodules https://github.com/overlisted/dotfiles /tmp/dotfiles
-	rsync -a /tmp/dotfiles/files/.* $HOME
+	rsync -a /tmp/dotfiles/files/.??* $HOME
 	dconf load / < /tmp/dotfiles/settings.dconf
 
 	rustup default nightly

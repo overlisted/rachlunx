@@ -47,4 +47,5 @@ elif [ $1 = "_logged_in" ]; then
 	task user flatpak
 	task user enable
 	task user shell
+	task user post
 fi

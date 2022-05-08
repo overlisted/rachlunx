@@ -209,3 +209,7 @@ function user_enable() {
 function user_shell() {
 	[ -n "$custom_shell" ] && homectl update $(whoami) --shell=$custom_shell
 }
+
+function user_post() {
+	custom_post
+}
