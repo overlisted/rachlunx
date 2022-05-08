@@ -11,9 +11,13 @@ fi
 source $rach/tasks.sh
 
 function task() {
+	local oldpwd=$(pwd)
+
 	printf "%s\n===> %8s $2\n\n" "$(tput setaf 9)" "($1)"
 
 	$1_$2 ${@:3}
+
+	cd "$oldpwd"
 }
 
 if [ $1 = "base" ]; then

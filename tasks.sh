@@ -155,8 +155,6 @@ function root_login() {
 
 # $1 - script name
 function user_load_custom() {
-	local oldpwd=$(pwd)
-
 	cd $rach/custom
 
 	if [ -n $1 ]; then
@@ -164,19 +162,13 @@ function user_load_custom() {
 	else
 		source noop.sh
 	fi
-
-	cd $oldpwd
 }
 
 function user_yay() {
-	local oldpwd=$(pwd)
-
 	cd /tmp
 	git clone https://aur.archlinux.org/yay.git || :
 	cd yay
 	makepkg -si --noconfirm
-
-	cd $oldpwd
 }
 
 function user_yay_pkgs() {
