@@ -41,7 +41,7 @@ function iso_partitions() {
 
 function iso_packages() {
 	packages=(
-		linux-zen linux-firmware amd-ucode intel-ucode
+		linux-zen linux-firmware amd-ucode intel-ucode fuse-overlayfs
 		base dbus-broker networkmanager ufw flatpak libvirt zram-generator
 		opendoas wget curl git nano rsync docker podman
 		linux-zen-headers base-devel go
