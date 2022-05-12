@@ -165,7 +165,7 @@ function root_login() {
 function user_load_custom() {
 	cd $rach/custom
 
-	if [ -n $1 ]; then
+	if [ -n "$1" ]; then
 		source $1.sh
 	else
 		source noop.sh
