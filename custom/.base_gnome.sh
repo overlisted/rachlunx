@@ -1,5 +1,5 @@
 custom_yay="$custom_yay
-	aur/adwaita-qt
+	community/qgnomeplatform-qt5 community/qgnomeplatform-qt6
 	extra/gnome-session extra/gdm extra/gnome-control-center
 	extra/xdg-user-dirs-gtk extra/gnome-terminal extra/gnome-software
 	extra/gnome-software-packagekit-plugin extra/gnome-system-monitor
