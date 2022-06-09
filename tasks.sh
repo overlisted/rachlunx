@@ -2,9 +2,23 @@
 
 # $1 - disk device
 function iso_partitions() {
+	while getopts ":p:" opt; do
+		case $opt in
+		p)
+			part_prefix=$OPTARG
+			;;
+		\?)
+			echo "Invalid option: -$OPTARG" >&2
+			exit 1
+			;;
+		:)
+			echo "Option -$OPTARG requires an argument." >&2
+			exit 1
+			;;
+		esac
+	done
 	efi_part=1
 	root_part=2
-	part_prefix=""
 
 	function fdisk_commands() {
 		echo "g"
