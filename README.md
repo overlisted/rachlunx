@@ -15,7 +15,7 @@ please don't be mad at me if this script deletes something important
 0. Choose a [custom script](./custom) (optional)
 1. Boot into the Arch installer image
 2. `mkcd /tmp/rach`
-3. `curl overli.st/rach | tar -xz && ./rach.sh base <disk>`
+3. `curl overli.st/rach | tar -xz && ./rach.sh base <disk>` (add `-p <prefix>` to specify an NVMe prefix)
 4. [Configure the timezone, locales and the hostname](https://wiki.archlinux.org/title/Installation_guide#Time_zone)
 5. Ctrl + D
 6. Log in as `root`

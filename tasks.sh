@@ -1,6 +1,7 @@
 ### iso
 
 # $1 - disk device
+# $2 - partition prefix
 function iso_partitions() {
 	efi_part=1
 	root_part=2
@@ -31,12 +32,12 @@ function iso_partitions() {
 
 	fdisk_commands | fdisk -W always $1 # -W gets rid of that annoying y/n prompt
 
-	mkfs.vfat $1$efi_part
-	mkfs.ext4 $1$root_part -L archroot
+	mkfs.vfat $1$2$efi_part
+	mkfs.ext4 $1$2$root_part -L archroot
 
-	mount $1$root_part /mnt
+	mount $1$2$root_part /mnt
 	mkdir /mnt/boot
-	mount $1$efi_part /mnt/boot
+	mount $1$2$efi_part /mnt/boot
 }
 
 function iso_packages() {
