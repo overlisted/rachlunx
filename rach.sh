@@ -20,8 +20,24 @@ function task() {
 	cd "$oldpwd"
 }
 
+while getopts ":p:" opt; do
+	case $opt in
+	p)
+		part_prefix=$OPTARG
+		;;
+	\?)
+		echo "Invalid option: -$OPTARG" >&2
+		exit 1
+		;;
+	:)
+		echo "Option -$OPTARG requires an argument." >&2
+		exit 1
+		;;
+	esac
+done
+
 if [ $1 = "base" ]; then
-	task iso partitions $2
+	task iso partitions $2 $part_prefix
 	task iso packages
 	task iso fstab
 	task iso usr_rach

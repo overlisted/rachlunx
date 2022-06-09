@@ -1,22 +1,8 @@
 ### iso
 
 # $1 - disk device
+# $2 - partition prefix
 function iso_partitions() {
-	while getopts ":p:" opt; do
-		case $opt in
-		p)
-			part_prefix=$OPTARG
-			;;
-		\?)
-			echo "Invalid option: -$OPTARG" >&2
-			exit 1
-			;;
-		:)
-			echo "Option -$OPTARG requires an argument." >&2
-			exit 1
-			;;
-		esac
-	done
 	efi_part=1
 	root_part=2
 
@@ -46,12 +32,12 @@ function iso_partitions() {
 
 	fdisk_commands | fdisk -W always $1 # -W gets rid of that annoying y/n prompt
 
-	mkfs.vfat $1$part_prefix$efi_part
-	mkfs.ext4 $1$part_prefix$root_part -L archroot
+	mkfs.vfat $1$2$efi_part
+	mkfs.ext4 $1$2$root_part -L archroot
 
-	mount $1$part_prefix$root_part /mnt
+	mount $1$2$root_part /mnt
 	mkdir /mnt/boot
-	mount $1$part_prefix$efi_part /mnt/boot
+	mount $1$2$efi_part /mnt/boot
 }
 
 function iso_packages() {
