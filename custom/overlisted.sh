@@ -6,7 +6,7 @@ source .base_zsh.sh
 custom_yay="$custom_yay
 	aur/vscodium-bin aur/ttf-twemoji aur/nerd-fonts-jetbrains-mono
 	community/neovim community/virt-manager community/ttf-dejavu community/rustup
-	community/inter-font community/glfw-wayland
+	community/inter-font community/glfw-wayland community/git-filter-repo
 	community/firefox-developer-edition
 	core/man-pages
 	extra/noto-fonts extra/qemu extra/noto-fonts-cjk
@@ -15,7 +15,6 @@ custom_yay="$custom_yay
 custom_flatpak="$custom_flatpak
 	org.gnome.Weather//stable
 	org.gnome.Epiphany.Devel//
-	org.telegram.desktop//beta
 	com.mattjakeman.ExtensionManager//beta
 	de.haeckerfelix.Fragments//stable
 	com.usebottles.bottles//stable
